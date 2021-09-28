@@ -1,15 +1,15 @@
-<mat-card class="card">
+<mat-card *ngIf="isCardDisplayed(plant)" class="card">
     <mat-card-header>
-        <mat-card-title>{{ item.name }}</mat-card-title>
-        <mat-card-subtitle>{{ item.subname }}</mat-card-subtitle>
+        <mat-card-title>{{ plant.name }}</mat-card-title>
+        <mat-card-subtitle>{{ plant.subname }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{ item.image_url }}" alt="Photo of a {{ item.name }}">
+    <img mat-card-image src="{{ plant.image_url }}" alt="Photo of a {{ plant.name }}">
     <mat-card-content>
         <p>
-            {{ item.description }}
+            {{ plant.description }}
         </p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>ARROSER</button>
+        <button *ngIf="!isPlantWatered(plant)" mat-button color="primary" (click)="watering(plant)">ARROSER</button>
     </mat-card-actions>
 </mat-card>

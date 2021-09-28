@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlantManagerComponent } from './plant-manager/plant-manager.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PlantManagerService } from './plant-manager/plant-manager.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { PlantManagerComponent } from './plant-manager/plant-manager.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PlantManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
